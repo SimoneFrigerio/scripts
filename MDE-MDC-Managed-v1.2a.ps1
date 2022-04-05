@@ -1,17 +1,22 @@
-﻿###########
-#REFERENCE#
-###########
-# https://docs.microsoft.com/en-us/azure/defender-for-cloud/integration-defender-for-endpoint?tabs=linux
-# https://docs.microsoft.com/en-us/powershell/module/az.compute/set-azvmextension?view=azps-7.3.2
-#
-# Require Powershell 7
-# 
+###########################################
 # Powered by Simone Frigerio - sifriger@microsoft.com
 # Version 1.2 
 # - added ARC VM
 # - added optimization functions
 #
-# ARC MODULE
+###########################################
+# References
+###########################################
+# https://docs.microsoft.com/en-us/azure/defender-for-cloud/integration-defender-for-endpoint?tabs=linux
+# https://docs.microsoft.com/en-us/powershell/module/az.compute/get-azvm?view=azps-7.3.2
+# https://docs.microsoft.com/en-us/powershell/module/az.compute/set-azvmextension?view=azps-7.3.2
+# https://docs.microsoft.com/en-us/powershell/module/az.connectedmachine/get-azconnectedmachine?view=azps-7.3.2
+# https://docs.microsoft.com/en-us/powershell/module/az.connectedmachine/get-azconnectedmachineextension?view=azps-7.3.2
+#
+###########################################
+# Requirement
+###########################################
+# Powershell 7
 # Install-Module -Name Az.ConnectedMachine
 #
 ###############################################################################
