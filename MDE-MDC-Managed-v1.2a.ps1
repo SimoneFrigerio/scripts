@@ -58,17 +58,14 @@ function OnboardingMDEWindows ($ResourceGroup, $VMName,$vmLocation, $subscriptio
 }
 
 ########################################################################
-##########################
-# CONFIGURATION SECTION
-##########################
+### CONFIGURATION SECTION
+########################################################################
 
-$subscriptions = "xxxxxxxx-yyyy-aaaa-bbbb-cccccccccccc,xxxxxxxx-yyyy-aaaa-bbbb-cccccccccccc"
-$RG_Excluded = "YOUR-RG"
+$subscriptions = "xxxxxxxx-yyyy-aaaa-bbbb-cccccccccccc,xxxxxxxx-yyyy-aaaa-bbbb-cccccccccccc" # your subscriptions separated by ,
+$RG_Excluded = "YOUR-RG" # your RG separated by ,
 
 # Convert Base64 Onboarding Script taken from Defender 365 Portal
 # https://www.base64encode.org/
-# Linux
-# Windows 2022
 $LinuxBase64onboarding ="BASE64ONBOARDING SCRIPT STRING" 
 $WinBase64onboarding = "BASE64ONBOARDING SCRIPT STRING"
 
