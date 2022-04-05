@@ -56,7 +56,6 @@ function OnboardingMDELinux ($ResourceGroup, $VMName,$vmLocation, $subscriptioni
         #Onboarding Extension MDE.Linux
         $Settings = @{"azureResourceId"= $ResourceID; "defenderForServersWorkspaceId"=$subscriptionid; "forceReOnboarding"="true"; "provisionedBy"="Manual" };
         $LinuxProtectedSettings = @{"defenderForEndpointOnboardingScript"= $LinuxBase64onboarding};
-        #Set-AzVMExtension -ResourceGroupName $ResourceGroup -VMName $VMName -Location "West EU" -Name "MDE.Linux" -Publisher "Microsoft.Azure.AzureDefenderForServers" -ExtensionType "MDE.Linux" -TypeHandlerVersion "1.0" -EnableAutomaticUpgrade $false -DisableAutoUpgradeMinorVersion $true -Settings $Settings -ProtectedSettings $LinuxProtectedSettings;
         $OnboardingVM = Set-AzVMExtension -ResourceGroupName $ResourceGroup -VMName $VMName -Location $vmLocation -Name "MDE.Linux" -Publisher "Microsoft.Azure.AzureDefenderForServers" -ExtensionType "MDE.Linux" -TypeHandlerVersion "1.0" -Settings $Settings -ProtectedSettings $LinuxProtectedSettings;
         $IsSuccessStatusCode = $OnboardingVM.IsSuccessStatusCode
         $StatusCode = $OnboardingVM.StatusCode
@@ -74,7 +73,6 @@ function OnboardingMDEWindows ($ResourceGroup, $VMName,$vmLocation, $subscriptio
     }else{
         #Windows ONLY 2019 2022 - W2012r2 - W2016
         $WinProtectedSettings = @{"defenderForEndpointOnboardingScript"= $WinBase64EncodingPackage};
-        #Set-AzVMExtension -ResourceGroupName $ResourceGroup -Location "West US" -VMName $VMName -Name "MDE.Windows" -Publisher "Microsoft.Azure.AzureDefenderForServers" -ExtensionType "CustomScriptExtension" -TypeHandlerVersion "1.1" -Settings $Settings -ProtectedSettings $WinProtectedSettings;
         $OnboardingVM = Set-AzVMExtension -ResourceGroupName $ResourceGroup -VMName $VMName -Location $vmLocation -Name "MDE.Windows" -Publisher "Microsoft.Azure.AzureDefenderForServers" -ExtensionType "MDE.Windows" -TypeHandlerVersion "1.0" -Settings $Settings -ProtectedSettings $WinProtectedSettings;
         $IsSuccessStatusCode = $OnboardingVM.IsSuccessStatusCode
         $StatusCode = $OnboardingVM.StatusCode
