@@ -1,5 +1,6 @@
-###########################################
-# Powered by Simone Frigerio - sifriger@microsoft.com
+#######################################################
+# Powered by Simone Frigerio - sifriger@microsoft.com #
+#######################################################
 # Version 1.2 
 # - added ARC VM
 # - added optimization functions
