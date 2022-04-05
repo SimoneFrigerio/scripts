@@ -14,34 +14,11 @@
 # ARC MODULE
 # Install-Module -Name Az.ConnectedMachine
 #
-# USE AT YOUR OWN RESPONSABILITY AND RISK - this procedures are not supported
-#
-##########################################################################
-
-Connect-AzAccount
-
-#$allResources = @()
-#$subscriptions= Get-AzSubscription
-
-##########################
-# CONFIGURATION SECTION
-##########################
-
-$subscriptions = "xxxxxxxx-yyyy-aaaa-bbbb-cccccccccccc,xxxxxxxx-yyyy-aaaa-bbbb-cccccccccccc"
-$RG_Excluded = "YOUR-RG"
-
-# Convert Base64 Onboarding Script taken from Defender 365 Portal
-# https://www.base64encode.org/
-# Linux
-# Windows 2022
-$LinuxBase64onboarding ="BASE64ONBOARDING SCRIPT STRING" 
-$WinBase64onboarding = "BASE64ONBOARDING SCRIPT STRING"
-
-#ONBOARDING Azure-VM - 0 Exclude - 1 Onboard
-$OnboardingAzVM = 0 
-
-#ONBOARDING ARC-VM - 0 Exclude - 1 Onboard
-$OnboardingARCVM = 0 
+###############################################################################
+#                                                                             #
+# USE AT YOUR OWN RESPONSABILITY AND RISK - this procedures are not supported #
+#                                                                             #
+###############################################################################
 
 ########################################################################
 #### FUNCTIONS
@@ -81,6 +58,31 @@ function OnboardingMDEWindows ($ResourceGroup, $VMName,$vmLocation, $subscriptio
 }
 
 ########################################################################
+##########################
+# CONFIGURATION SECTION
+##########################
+
+$subscriptions = "xxxxxxxx-yyyy-aaaa-bbbb-cccccccccccc,xxxxxxxx-yyyy-aaaa-bbbb-cccccccccccc"
+$RG_Excluded = "YOUR-RG"
+
+# Convert Base64 Onboarding Script taken from Defender 365 Portal
+# https://www.base64encode.org/
+# Linux
+# Windows 2022
+$LinuxBase64onboarding ="BASE64ONBOARDING SCRIPT STRING" 
+$WinBase64onboarding = "BASE64ONBOARDING SCRIPT STRING"
+
+#ONBOARDING Azure-VM - 0 Exclude - 1 Onboard
+$OnboardingAzVM = 0 
+
+#ONBOARDING ARC-VM - 0 Exclude - 1 Onboard
+$OnboardingARCVM = 0 
+
+########################################################################
+Connect-AzAccount
+
+#$allResources = @()
+#$subscriptions= Get-AzSubscription
 $array_subscriptions = $subscriptions.split(",")
 $RG_Excluded = $RG_Excluded.ToLower()
 $array_RG_Excluded = $RG_Excluded.split(",")
