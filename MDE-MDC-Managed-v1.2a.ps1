@@ -11,10 +11,8 @@
 # - added ARC VM
 # - added optimization functions
 #
-# ARC MODULE - Require Powershell 7
-#
+# ARC MODULE
 # Install-Module -Name Az.ConnectedMachine
-
 ##########################################################################
 
 Connect-AzAccount
