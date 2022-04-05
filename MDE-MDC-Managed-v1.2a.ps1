@@ -13,6 +13,9 @@
 #
 # ARC MODULE
 # Install-Module -Name Az.ConnectedMachine
+#
+# USE AT YOUR OWN RESPONSABILITY AND RISK - this procedures are not supported
+#
 ##########################################################################
 
 Connect-AzAccount
@@ -31,8 +34,8 @@ $RG_Excluded = "YOUR-RG"
 # https://www.base64encode.org/
 # Linux
 # Windows 2022
-$LinuxBase64onboarding ="BASE64ONBOARDING SCRIPT" 
-$WinBase64onboarding = "BASE64ONBOARDING SCRIPT"
+$LinuxBase64onboarding ="BASE64ONBOARDING SCRIPT STRING" 
+$WinBase64onboarding = "BASE64ONBOARDING SCRIPT STRING"
 
 #ONBOARDING Azure-VM - 0 Exclude - 1 Onboard
 $OnboardingAzVM = 0 
